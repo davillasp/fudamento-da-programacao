@@ -1,0 +1,128 @@
+
+    
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="squil.css">
+    <title>Calculadora Simples</title>
+    <style>
+        /*.calculator {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 10px;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #bd2222;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(37, 35, 35, 0.1);
+        }
+        .calculator input {
+            grid-column: span 4;
+            padding: 10px;
+            font-size: 1.5em;
+            text-align: right;
+            border: 1px solid #da1010;
+            border-radius: 5px;
+        }
+        .calculator button {
+            padding: 20px;
+            font-size: 1.2em;
+            border: 1px solid #191414;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .calculator button:active {
+            background-color: #160707;
+        }
+        .calculator button.equal {
+            grid-column: span 4;
+            background-color: #9d2828;
+            color: rgb(17, 10, 10);
+        }*/
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <button onclick="appendNumber('1')">1</button>
+        <button onclick="appendNumber('2')">2</button>
+        <button onclick="appendNumber('3')">3</button>
+        <button onclick="setOperation('+')">+</button>
+        <button onclick="appendNumber('4')">4</button>
+        <button onclick="appendNumber('5')">5</button>
+        <button onclick="appendNumber('6')">6</button>
+        <button onclick="setOperation('-')">-</button>
+        <button onclick="appendNumber('7')">7</button>
+        <button onclick="appendNumber('8')">8</button>
+        <button onclick="appendNumber('9')">9</button>
+        <button onclick="setOperation('*')">*</button>
+        <button onclick="appendNumber('0')">0</button>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="calculateResult()" class="equal">=</button>
+        <button onclick="setOperation('/')">/</button>
+    </div>
+    <script>
+        let display = document.getElementById('display');
+        let currentInput = '';
+        let operation = null;
+        let firstOperand = null;
+
+        function appendNumber(number) {
+            currentInput += number;
+            display.value = currentInput;
+        }
+
+        function setOperation(op) {
+            if (currentInput === '') return;
+            if (firstOperand === null) {
+                firstOperand = parseFloat(currentInput);
+            } else {
+                firstOperand = calculate(firstOperand, parseFloat(currentInput), operation);
+                display.value = firstOperand;
+            }
+            operation = op;
+            currentInput = '';
+        }
+
+        function calculateResult() {
+            if (currentInput === '' || firstOperand === null || operation === null) return;
+            let secondOperand = parseFloat(currentInput);
+            let result = calculate(firstOperand, secondOperand, operation);
+            display.value = result;
+            currentInput = '';
+            firstOperand = null;
+            operation = null;
+        }
+
+        function calculate(a, b, op) {
+            switch (op) {
+                case '+':
+                    return a + b;
+                case '-':
+                    return a - b;
+                case '*':
+                    return a * b;
+                case '/':
+                    return a / b;
+                default:
+                    return 0;
+            }
+        }
+
+        function clearDisplay() {
+            display.value = '';
+            currentInput = '';
+            firstOperand = null;
+            operation = null;
+        }
+    </script>
+</body>
+</html>
+
+    
+    
+</body>
+</html>
