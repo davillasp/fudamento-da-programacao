@@ -11,12 +11,34 @@ h1{
     margin: 0%;
 
 }
-
+.boloimg{
+    margin-left: 100px;
+    
+}
+.boloo{
+   margin-right: 100px;
+   font-size: 18px;
+}
 
 .brigadeiro{
     display: flex;
     justify-content: center;
-   
+  
+}
+.briga{
+     margin-left: 100px;
+     
+}
+.textobriga{
+    margin-right: 0px;
+    
+}
+.cookieimg{
+    margin-left: 70px;
+    
+}
+.textocookie{
+   margin-right: 50px;
 }
 *{
     padding: 0;
@@ -25,7 +47,7 @@ h1{
 }
 .container1{
     max-width: 1400px;
-    padding: 3px;
+    padding: 25px;
     margin: 0;
 }
 header{
@@ -66,6 +88,7 @@ nav ul li a:hover{
 } 
 body {
     font-family: sans-serif;
+    background-color: rgb(232, 225, 235);
   }
 
   label {
