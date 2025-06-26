@@ -1,0 +1,11 @@
+.titulo{
+    font-size: 40px;
+    background-color: blue;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+}
+input{
+    height: 30px;
+    width: 300px;
+}

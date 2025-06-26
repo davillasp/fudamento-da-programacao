@@ -1,0 +1,23 @@
+body{
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: aqua;
+}
+input{
+    height: 30px;
+    width: 300px;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    background: rgb(255, 81, 0);
+    width: 350px;
+    height: 300px;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 20px;
+    box-shadow: 0 0 10px black;
+}
